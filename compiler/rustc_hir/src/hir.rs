@@ -4881,7 +4881,7 @@ pub enum ForeignItemKind<'hir> {
     /// `&[Option<Ident>]` is used because of code paths shared with `TraitFn`
     /// and `FnPtrTy`. The sharing is due to all of these cases not allowing
     /// arbitrary patterns for parameters.
-    Fn(FnSig<'hir>, &'hir [Option<Ident>], &'hir Generics<'hir>),
+    Fn(FnSig<'hir>, &'hir [Param<'hir>], &'hir Generics<'hir>),
     /// A foreign static item (`static ext: u8`).
     Static(&'hir Ty<'hir>, Mutability, Safety),
     /// A foreign type.
